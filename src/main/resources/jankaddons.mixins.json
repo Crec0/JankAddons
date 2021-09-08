@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "jankaddons.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "FungusBlockMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

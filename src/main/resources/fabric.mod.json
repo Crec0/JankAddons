@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "jankaddons",
+  "version": "1.0.0",
+
+  "name": "Jank Addons",
+  "description": "Crec0's rules which are missing from official carpet",
+  "authors": [
+    "Crec0#0420"
+  ],
+  "contact": {
+    "sources": "https://github.com/Crec0/JankAddons"
+  },
+
+  "license": "CC0-1.0",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "jankaddons.JankAddons"
+    ]
+  },
+  "mixins": [
+    "jankaddons.mixins.json"
+  ],
+
+  "depends": {
+    "minecraft": "1.16.x",
+    "fabricloader": ">=0.10.0",
+    "carpet": ">=1.4.44"
+  }
+}
