@@ -36,7 +36,7 @@ public abstract class FungusBlockMixin extends AbstractBlockMixin {
 
     @Override
     public void handleRandomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci){
-        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(256) == 0 && world.getLightLevel(pos.up()) >= 12) {
+        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(49) == 0 && world.getLightLevel(pos.up()) >= 8) {
             this.grow(world, random, pos, state);
         }
     }
