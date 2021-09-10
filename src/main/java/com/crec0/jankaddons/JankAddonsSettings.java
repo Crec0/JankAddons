@@ -1,17 +1,15 @@
-package jankaddons;
+package com.crec0.jankaddons;
 
 import carpet.settings.Rule;
 
 import static carpet.settings.RuleCategory.FEATURE;
 import static carpet.settings.RuleCategory.SURVIVAL;
+import static com.crec0.jankaddons.StringConstants.JANK;
 
 public class JankAddonsSettings {
-
-    public static final String CREC0 = "crec0";
-
     @Rule(
             desc = "Makes crimson fungus and nyliem fungus grow based on random ticks",
-            category = {CREC0, SURVIVAL, FEATURE},
+            category = {JANK, SURVIVAL, FEATURE},
             options = {"false", "true"}
     )
     public static boolean fungusRandomTickGrow = false;

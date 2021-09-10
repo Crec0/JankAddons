@@ -1,6 +1,6 @@
-package jankaddons.mixins;
+package com.crec0.jankaddons.mixins;
 
-import jankaddons.JankAddonsSettings;
+import com.crec0.jankaddons.JankAddonsSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FungusBlock;
@@ -20,12 +20,11 @@ import java.util.function.Supplier;
 @Mixin(FungusBlock.class)
 public abstract class FungusBlockMixin extends AbstractBlockMixin {
 
+    private final int GROWTH_CHANCE = 144;
+
     @Shadow public abstract void grow(ServerWorld world, Random random, BlockPos pos, BlockState state);
 
-    @Inject(
-            method = "<init>",
-            at = @At("TAIL")
-    )
+    @Inject(method = "<init>", at = @At("TAIL"))
     public void enableRandomTicks(
             AbstractBlock.Settings settings,
             Supplier<ConfiguredFeature<HugeFungusFeatureConfig, ?>> feature,
@@ -36,7 +35,7 @@ public abstract class FungusBlockMixin extends AbstractBlockMixin {
 
     @Override
     public void handleRandomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci){
-        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(49) == 0 && world.getLightLevel(pos.up()) >= 8) {
+        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(GROWTH_CHANCE) == 0 && world.getLightLevel(pos.up()) >= 8) {
             this.grow(world, random, pos, state);
         }
     }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "jankaddons",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "Jank Addons",
   "description": "Crec0's rules which are missing from official carpet",
@@ -17,7 +17,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "jankaddons.JankAddons"
+      "com.crec0.jankaddons.JankAddons"
     ]
   },
   "mixins": [
