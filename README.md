@@ -1,16 +1,33 @@
-# Fabric Example Mod
+# Jank Addons
+[Fabric carpet](https://github.com/gnembon/fabric-carpet) extension that adds features which are missing from the original carpet and existing extensions.
 
-## Setup
+Feel free to contribute or suggest features which you thing should be present in this extension.
 
-1. Edit build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
+## Index
 
-```
-./gradlew idea
-```
+* [fungusRandomTickGrow](#fungusRandomTickGrow)
+* [stackableFreshBows](#stackableFreshBows)
+* [polishedBlackstoneButtonBreakingSpeedFix](#polishedBlackstoneButtonBreakingSpeedFix)
 
-## License
+# Features
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+##fungusRandomTickGrow
+Makes nylium and crimson fungus grow if they are random ticked
+* Type: `Boolean`
+* Default Value: `false`
+* Required Options: `false`, `true`
+* Category: `JANK`, `SURVIVAL`
+
+##stackableFreshBows
+Makes undamaged, unenchanted bows stackable. Easier to masscraft dispensers now.
+* Type: `Boolean`
+* Default Value: `false`
+* Required Options: `false`, `true`
+* Category: `JANK`, `SURVIVAL`
+
+##polishedBlackstoneButtonBreakingSpeedFix
+Fixes [MC-199752](https://bugs.mojang.com/browse/MC-199752). Matches the polished blackstone button's breaking speed to be same as regular stone button. As intended.
+* Type: `Boolean`
+* Default Value: `false`
+* Required Options: `false`, `true`
+* Category: `JANK`, `SURVIVAL`, `BUGFIX`
