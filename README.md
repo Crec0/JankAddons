@@ -11,21 +11,21 @@ Feel free to contribute or suggest features which you thing should be present in
 
 # Features
 
-##fungusRandomTickGrow
+## fungusRandomTickGrow
 Makes nylium and crimson fungus grow if they are random ticked
 * Type: `Boolean`
 * Default Value: `false`
 * Required Options: `false`, `true`
 * Category: `JANK`, `SURVIVAL`
 
-##stackableFreshBows
+## stackableFreshBows
 Makes undamaged, unenchanted bows stackable. Easier to masscraft dispensers now.
 * Type: `Boolean`
 * Default Value: `false`
 * Required Options: `false`, `true`
 * Category: `JANK`, `SURVIVAL`
 
-##polishedBlackstoneButtonBreakingSpeedFix
+## polishedBlackstoneButtonBreakingSpeedFix
 Fixes [MC-199752](https://bugs.mojang.com/browse/MC-199752). Matches the polished blackstone button's breaking speed to be same as regular stone button. As intended.
 * Type: `Boolean`
 * Default Value: `false`
