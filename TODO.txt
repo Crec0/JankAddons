@@ -1,0 +1,4 @@
+TODO: fly mode with adjustable flight speed
+TODO: add cursor slot configurable through scarpet function
+Todo: stacking mayhem
+Todo: make azalea irl like

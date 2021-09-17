@@ -3,8 +3,12 @@
   "package": "com.crec0.jankaddons.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "AbstractBlockMixin",
-    "FungusBlockMixin"
+    "miningSpeeds.MiningToolItemMixin",
+    "miningSpeeds.PickaxeItemMixin",
+    "randomTickFungus.AbstractBlockMixin",
+    "randomTickFungus.FungusBlockMixin",
+    "stackableBows.AnvilScreenHandlerMixin",
+    "stackableBows.ItemStackMixin"
   ],
   "client": [
   ],

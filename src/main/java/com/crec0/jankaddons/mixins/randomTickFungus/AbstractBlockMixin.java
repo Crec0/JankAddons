@@ -1,4 +1,4 @@
-package com.crec0.jankaddons.mixins;
+package com.crec0.jankaddons.mixins.randomTickFungus;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Random;
 
 @Mixin(AbstractBlock.class)
-public class AbstractBlockMixin {
+public abstract class AbstractBlockMixin {
 
     @Mutable @Shadow @Final protected boolean randomTicks;
 

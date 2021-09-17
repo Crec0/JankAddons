@@ -6,10 +6,11 @@
   "name": "Jank Addons",
   "description": "Crec0's rules which are missing from official carpet",
   "authors": [
-    "Crec0#0420"
+    "Crec0"
   ],
   "contact": {
-    "sources": "https://github.com/Crec0/JankAddons"
+    "sources": "https://github.com/Crec0/JankAddons",
+    "discord": "Crec0#0420"
   },
 
   "license": "CC0-1.0",
