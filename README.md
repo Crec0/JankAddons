@@ -24,10 +24,3 @@ Makes undamaged, unenchanted bows stackable. Easier to masscraft dispensers now.
 * Default Value: `false`
 * Required Options: `false`, `true`
 * Category: `JANK`, `SURVIVAL`
-
-## polishedBlackstoneButtonBreakingSpeedFix
-Fixes [MC-199752](https://bugs.mojang.com/browse/MC-199752). Matches the polished blackstone button's breaking speed to be same as regular stone button. As intended.
-* Type: `Boolean`
-* Default Value: `false`
-* Required Options: `false`, `true`
-* Category: `JANK`, `SURVIVAL`, `BUGFIX`
