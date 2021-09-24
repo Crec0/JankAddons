@@ -1,7 +1,7 @@
-package com.crec0.jankaddons.mixins.randomTickFungus;
+package jankaddons.mixins.randomTickFungus;
 
-import com.crec0.jankaddons.JankAddonsSettings;
-import com.crec0.jankaddons.NumericConstants;
+import jankaddons.JankAddonsSettings;
+import jankaddons.NumericConstants;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FungusBlock;

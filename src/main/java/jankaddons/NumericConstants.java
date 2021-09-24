@@ -1,4 +1,4 @@
-package com.crec0.jankaddons;
+package jankaddons;
 
 public class NumericConstants {
     public static final int MAX_BOW_STACK_SIZE = 64;

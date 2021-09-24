@@ -1,4 +1,4 @@
-package com.crec0.jankaddons;
+package jankaddons;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;

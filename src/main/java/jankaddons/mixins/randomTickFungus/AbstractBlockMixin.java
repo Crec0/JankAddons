@@ -1,4 +1,4 @@
-package com.crec0.jankaddons.mixins.randomTickFungus;
+package jankaddons.mixins.randomTickFungus;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;

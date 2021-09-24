@@ -1,10 +1,10 @@
-package com.crec0.jankaddons;
+package jankaddons;
 
 import carpet.settings.Rule;
 
 import static carpet.settings.RuleCategory.FEATURE;
 import static carpet.settings.RuleCategory.SURVIVAL;
-import static com.crec0.jankaddons.StringConstants.JANK;
+import static jankaddons.StringConstants.JANK;
 
 public class JankAddonsSettings {
     @Rule(

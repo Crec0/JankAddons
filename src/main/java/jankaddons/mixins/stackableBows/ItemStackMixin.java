@@ -1,8 +1,8 @@
-package com.crec0.jankaddons.mixins.stackableBows;
+package jankaddons.mixins.stackableBows;
 
-import com.crec0.jankaddons.JankAddonsSettings;
-import com.crec0.jankaddons.NumericConstants;
-import com.crec0.jankaddons.Utils;
+import jankaddons.JankAddonsSettings;
+import jankaddons.NumericConstants;
+import jankaddons.Utils;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
