@@ -2,8 +2,7 @@ package com.crec0.jankaddons;
 
 import carpet.settings.Rule;
 
-import static carpet.settings.RuleCategory.FEATURE;
-import static carpet.settings.RuleCategory.SURVIVAL;
+import static carpet.settings.RuleCategory.*;
 import static com.crec0.jankaddons.StringConstants.JANK;
 
 public class JankAddonsSettings {
@@ -20,4 +19,11 @@ public class JankAddonsSettings {
             options = {"true", "false"}
     )
     public static boolean stackableFreshBows = false;
+
+    @Rule(
+            desc = "Make deepslate instaminable",
+            category = {JANK, SURVIVAL, COMMAND},
+            options = {"true", "false"}
+    )
+    public static boolean instamineDeepslate = false;
 }
