@@ -4,10 +4,10 @@
 Feel free to contribute or suggest features which you thing should be present in this extension.
 
 ## Index
-* [Rules Index](#Rules Index)
+* [Rules Index](#Rules)
 * [Commands](#Commands)
 
-## Rules Index
+## Rules
 
 * [fungusRandomTickGrow](#fungusRandomTickGrow)
 * [stackableFreshBows](#stackableFreshBows)
