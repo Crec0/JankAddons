@@ -2,9 +2,8 @@ package jankaddons;
 
 import carpet.settings.Rule;
 
-import static carpet.settings.RuleCategory.FEATURE;
-import static carpet.settings.RuleCategory.SURVIVAL;
-import static jankaddons.StringConstants.JANK;
+import static carpet.settings.RuleCategory.*;
+import static jankaddons.constants.StringConstants.JANK;
 
 public class JankAddonsSettings {
     @Rule(
@@ -20,4 +19,20 @@ public class JankAddonsSettings {
             options = {"true", "false"}
     )
     public static boolean stackableFreshBows = false;
+
+    @Rule(
+            desc = "Enables /portalactivity command to monitor portal usages within last x ticks",
+            extra = "Time it monitors is set by /carpet portalActivityMoniterTime <duration>",
+            category = {JANK, SURVIVAL, COMMAND},
+            options = {"ops", "true", "false"}
+    )
+    public static String commandPortalMonitor = "false";
+
+    @Rule(
+            desc = "Makes tall grass and large fern harvestable with shears",
+            options = {"true", "false"},
+            category = {JANK, SURVIVAL, FEATURE}
+    )
+    public static boolean harvestableTallGrassFern = false;
+
 }

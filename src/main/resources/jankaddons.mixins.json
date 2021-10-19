@@ -3,6 +3,9 @@
   "package": "jankaddons.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "harvestableTallPlant.TallPlantBlockMixin",
+    "portalActivity.EntityMixin",
+    "portalActivity.MinecraftServerMixin",
     "randomTickFungus.AbstractBlockMixin",
     "randomTickFungus.FungusBlockMixin",
     "stackableBows.AnvilScreenHandlerMixin",
