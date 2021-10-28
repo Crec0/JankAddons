@@ -10,9 +10,10 @@ Feel free to contribute or suggest features which you thing should be present in
 ## Rules
 
 * [fungusRandomTickGrow](#fungusRandomTickGrow)
-* [stackableFreshBows](#stackableFreshBows)
-* [polishedBlackstoneButtonBreakingSpeedFix](#polishedBlackstoneButtonBreakingSpeedFix)
 * [harvestableTallGrassFern](#harvestableTallGrassFern)
+* [instamineDeepslate](#instamineDeepslate)
+* [movableEnderChest](#movableEnderChest)
+* [stackableFreshBows](#stackableFreshBows)
 * [commandPortalMonitor](#commandPortalMonitor)
 
 # Features
@@ -24,15 +25,29 @@ Makes nylium and crimson fungus grow if they are random ticked
 * Required Options: `false`, `true`
 * Category: `JANK`, `SURVIVAL`, `FEATURE`
 
-## stackableFreshBows
-Makes undamaged, unenchanted bows stackable. Easier to masscraft dispensers now.
+## harvestableTallGrassFern
+Makes tall grass and large fern harvestable with shears
 * Type: `Boolean`
 * Default Value: `false`
 * Required Options: `false`, `true`
 * Category: `JANK`, `SURVIVAL`, `FEATURE`
 
-## harvestableTallGrassFern
-Makes tall grass and large fern harvestable with shears
+## instamineDeepslate
+Makes deepslate instamine
+* Type: `Boolean`
+* Default Value: `false`
+* Required Options: `false`, `true`
+* Category: `JANK`, `SURVIVAL`, `FEATURE`
+
+## movableEnderChest
+Makes ender chests movable
+* Type: `Boolean`
+* Default Value: `false`
+* Required Options: `false`, `true`
+* Category: `JANK`, `SURVIVAL`, `EXPERIMENTAL`
+
+## stackableFreshBows
+Makes undamaged, unenchanted bows stackable. Easier to masscraft dispensers now.
 * Type: `Boolean`
 * Default Value: `false`
 * Required Options: `false`, `true`
