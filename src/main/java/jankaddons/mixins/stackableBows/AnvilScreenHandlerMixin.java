@@ -1,7 +1,7 @@
-package com.crec0.jankaddons.mixins.stackableBows;
+package jankaddons.mixins.stackableBows;
 
-import com.crec0.jankaddons.JankAddonsSettings;
-import com.crec0.jankaddons.Utils;
+import jankaddons.JankAddonsSettings;
+import jankaddons.helpers.Utils;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -26,13 +26,14 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
     public void reduceToOne(CallbackInfo ci) {
         ItemStack originalStack = this.input.getStack(0);
         ItemStack mergeStack = this.input.getStack(1);
-        if (JankAddonsSettings.stackableFreshBows && Utils.isFreshBow(originalStack) && originalStack.getCount() > 1 && (mergeStack.isOf(Items.ENCHANTED_BOOK) || !Utils.isFreshBow(mergeStack))) {
+        if (JankAddonsSettings.stackableFreshBows && Utils.isFreshBow(originalStack) && originalStack.getCount() > 1 && (mergeStack.isItemEqual(Items.ENCHANTED_BOOK.getDefaultStack())) || !Utils.isFreshBow(
+                mergeStack)) {
             ItemStack reducedInputStack = originalStack.copy();
             originalStack.setCount(1);
             this.input.setStack(0, originalStack);
             this.output.getStack(0).setCount(1);
             reducedInputStack.setCount(reducedInputStack.getCount() - 1);
-            this.player.getInventory().offerOrDrop(reducedInputStack);
+            this.player.inventory.offerOrDrop(this.player.world, reducedInputStack);
         }
     }
 }

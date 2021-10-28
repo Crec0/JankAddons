@@ -1,8 +1,11 @@
 {
   "required": true,
-  "package": "com.crec0.jankaddons.mixins",
+  "package": "jankaddons.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "harvestableTallPlant.TallPlantBlockMixin",
+    "portalActivity.EntityMixin",
+    "portalActivity.MinecraftServerMixin",
     "miningSpeeds.MiningToolItemMixin",
     "miningSpeeds.PickaxeItemMixin",
     "randomTickFungus.AbstractBlockMixin",

@@ -1,7 +1,7 @@
-package com.crec0.jankaddons.mixins.randomTickFungus;
+package jankaddons.mixins.randomTickFungus;
 
-import com.crec0.jankaddons.JankAddonsSettings;
-import com.crec0.jankaddons.NumericConstants;
+import jankaddons.JankAddonsSettings;
+import jankaddons.constants.NumericConstants;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FungusBlock;
@@ -21,16 +21,17 @@ import java.util.function.Supplier;
 @Mixin(FungusBlock.class)
 public abstract class FungusBlockMixin extends AbstractBlockMixin {
 
-    @Shadow public abstract void grow(ServerWorld world, Random random, BlockPos pos, BlockState state);
+    @Shadow
+    public abstract void grow(ServerWorld world, Random random, BlockPos pos, BlockState state);
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    public void enableRandomTicks(AbstractBlock.Settings settings, Supplier<ConfiguredFeature<HugeFungusFeatureConfig, ?>> feature, CallbackInfo ci){
+    public void enableRandomTicks(AbstractBlock.Settings settings, Supplier<ConfiguredFeature<HugeFungusFeatureConfig, ?>> feature, CallbackInfo ci) {
         this.randomTicks = true;
     }
 
     @Override
-    public void handleRandomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci){
-        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(NumericConstants.GROWTH_CHANCE) == 0 && world.getLightLevel(pos.up()) >= 8) {
+    public void handleRandomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
+        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(NumericConstants.FUNGUS_GROWTH_CHANCE) == 0 && world.getLightLevel(pos.up()) >= 8) {
             this.grow(world, random, pos, state);
         }
     }

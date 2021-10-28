@@ -1,4 +1,4 @@
-package com.crec0.jankaddons.mixins.randomTickFungus;
+package jankaddons.mixins.randomTickFungus;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
@@ -17,8 +17,11 @@ import java.util.Random;
 @Mixin(AbstractBlock.class)
 public abstract class AbstractBlockMixin {
 
-    @Mutable @Shadow @Final protected boolean randomTicks;
+    @Mutable
+    @Shadow
+    @Final
+    protected boolean randomTicks;
 
-    @Inject(method = "randomTick",at = @At("TAIL"))
-    public void handleRandomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci){}
+    @Inject(method = "randomTick", at = @At("TAIL"))
+    public void handleRandomTick(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {}
 }

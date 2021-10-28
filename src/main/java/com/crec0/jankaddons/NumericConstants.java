@@ -5,7 +5,3 @@ public class NumericConstants {
     public static final int GROWTH_CHANCE = 144;
     public static final float DEEPSLATE_MINING_SPEED = 38.28572F;
 }
-
-/*
-
- */
