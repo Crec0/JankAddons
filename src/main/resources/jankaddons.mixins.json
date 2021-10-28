@@ -6,6 +6,7 @@
     "harvestableTallPlant.TallPlantBlockMixin",
     "portalActivity.EntityMixin",
     "portalActivity.MinecraftServerMixin",
+    "raidMonitor.RaidMixin",
     "randomTickFungus.AbstractBlockMixin",
     "randomTickFungus.FungusBlockMixin",
     "stackableBows.AnvilScreenHandlerMixin",

@@ -67,7 +67,6 @@ public class PortalMonitorUtil {
 
     public static void tick() {
         if (JankAddonsSettings.commandPortalMonitor.equals("false")) return;
-
         List<String> keysToRemove = new ArrayList<>();
         for (Map.Entry<String, ExpirableNamedPosition> entry : PORTAL_DATA.getNamedPositions().entrySet()) {
             entry.getValue().tick();
@@ -92,16 +91,6 @@ public class PortalMonitorUtil {
                           .stream()
                           .sorted(Comparator.comparingDouble(ExpirableNamedPosition::lastTriggered))
                           .map(ExpirableNamedPosition::formatedOutputString);
-    }
-
-    public static Map<String, ExpirableNamedPosition> getCustomNamedPositions() {
-        SortedMap<String, ExpirableNamedPosition> sortedMap = new TreeMap<>();
-        for (Map.Entry<String, ExpirableNamedPosition> entry : PORTAL_DATA.getNamedPositions().entrySet()) {
-            if (entry.getValue().isCustomNamed()) {
-                sortedMap.put(entry.getKey(), entry.getValue());
-            }
-        }
-        return sortedMap;
     }
 
     public static Stream<String> getTrackedEntities() {
