@@ -14,6 +14,20 @@ public class JankAddonsSettings {
     public static boolean fungusRandomTickGrow = false;
 
     @Rule(
+            desc = "Makes tall grass and large fern harvestable with shears",
+            options = {"true", "false"},
+            category = {JANK, SURVIVAL, FEATURE}
+    )
+    public static boolean harvestableTallGrassFern = false;
+
+    @Rule(
+            desc = "Make enderchests movable",
+            category = {JANK, SURVIVAL, EXPERIMENTAL},
+            options = {"true", "false"}
+    )
+    public static boolean movableEnderChest = false;
+
+    @Rule(
             desc = "Make fresh bows stack to 64",
             category = {JANK, SURVIVAL, FEATURE},
             options = {"true", "false"}
@@ -27,12 +41,4 @@ public class JankAddonsSettings {
             options = {"ops", "true", "false"}
     )
     public static String commandPortalMonitor = "false";
-
-    @Rule(
-            desc = "Makes tall grass and large fern harvestable with shears",
-            options = {"true", "false"},
-            category = {JANK, SURVIVAL, FEATURE}
-    )
-    public static boolean harvestableTallGrassFern = false;
-
 }

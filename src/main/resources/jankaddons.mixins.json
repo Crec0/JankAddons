@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "harvestableTallPlant.TallPlantBlockMixin",
+    "movableBlocks.PistonBlockMixin",
     "portalActivity.EntityMixin",
     "portalActivity.MinecraftServerMixin",
     "raidMonitor.RaidMixin",

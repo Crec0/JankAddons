@@ -1,5 +1,7 @@
 package jankaddons.helpers;
 
+import jankaddons.helpers.ExpirableNamedPosition;
+import jankaddons.util.Utils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 

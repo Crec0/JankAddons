@@ -3,6 +3,7 @@ package jankaddons.helpers;
 import com.google.gson.*;
 import jankaddons.JankAddons;
 import jankaddons.JankAddonsSettings;
+import jankaddons.util.Utils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.registry.Registry;
