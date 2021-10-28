@@ -4,10 +4,11 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "harvestableTallPlant.TallPlantBlockMixin",
-    "portalActivity.EntityMixin",
-    "portalActivity.MinecraftServerMixin",
     "miningSpeeds.MiningToolItemMixin",
     "miningSpeeds.PickaxeItemMixin",
+    "movableBlocks.PistonBlockMixin",
+    "portalActivity.EntityMixin",
+    "portalActivity.MinecraftServerMixin",
     "randomTickFungus.AbstractBlockMixin",
     "randomTickFungus.FungusBlockMixin",
     "stackableBows.AnvilScreenHandlerMixin",

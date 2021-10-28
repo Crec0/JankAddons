@@ -1,7 +1,7 @@
-package com.crec0.jankaddons.mixins.miningSpeeds;
+package jankaddons.mixins.miningSpeeds;
 
-import com.crec0.jankaddons.JankAddonsSettings;
-import com.crec0.jankaddons.NumericConstants;
+import jankaddons.JankAddonsSettings;
+import jankaddons.constants.NumericConstants;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;

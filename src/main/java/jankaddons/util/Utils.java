@@ -1,4 +1,4 @@
-package jankaddons.helpers;
+package jankaddons.util;
 
 import jankaddons.constants.StringConstants;
 import net.fabricmc.loader.api.FabricLoader;
@@ -21,7 +21,10 @@ public class Utils {
 
     public static Path getSaveFile() {
         try {
-            Path saveFile = FabricLoader.getInstance().getConfigDir().resolve("JankAddons").resolve(StringConstants.NAMED_PORTAL_SAVE_FILE);
+            Path saveFile = FabricLoader.getInstance()
+                                        .getConfigDir()
+                                        .resolve("JankAddons")
+                                        .resolve(StringConstants.NAMED_PORTAL_SAVE_FILE);
 
             if (!Files.exists(saveFile.getParent())) {
                 Files.createDirectory(saveFile.getParent());

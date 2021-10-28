@@ -9,8 +9,8 @@ repositories {
 	}
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
 version = project.minecraft_version+'-'+project.mod_version+'-v'+new Date().format('yyyyMMdd')
@@ -32,11 +32,7 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
-
-	def targetVersion = 8
-	if (JavaVersion.current().isJava9Compatible()) {
-		it.options.release = targetVersion
-	}
+	it.options.javaModuleVersion.set("16")
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task

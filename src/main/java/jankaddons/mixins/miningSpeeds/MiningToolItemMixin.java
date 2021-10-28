@@ -1,4 +1,4 @@
-package com.crec0.jankaddons.mixins.miningSpeeds;
+package jankaddons.mixins.miningSpeeds;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;

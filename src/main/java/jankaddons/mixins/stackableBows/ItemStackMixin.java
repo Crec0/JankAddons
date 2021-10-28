@@ -2,7 +2,7 @@ package jankaddons.mixins.stackableBows;
 
 import jankaddons.JankAddonsSettings;
 import jankaddons.constants.NumericConstants;
-import jankaddons.helpers.Utils;
+import jankaddons.util.Utils;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

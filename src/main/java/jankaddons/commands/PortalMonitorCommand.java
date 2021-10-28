@@ -18,6 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 
 import static jankaddons.constants.StringConstants.GRAY_DASHED_LINE;
@@ -59,8 +60,9 @@ public class PortalMonitorCommand {
             return 0;
         }
         String name = context.getArgument("name", String.class);
-        if (PortalMonitorUtil.add(name, player.chunkX, player.chunkZ)) {
-            Messenger.m(source, "d Added " + name + "@[x: " + player.chunkX + ", z: " + player.chunkZ + "] to monitor list");
+        ChunkPos playerChunkPos = player.getChunkPos();
+        if (PortalMonitorUtil.add(name, playerChunkPos.x, playerChunkPos.z)) {
+            Messenger.m(source, "d Added " + name + "@[x: " + playerChunkPos.x + ", z: " + playerChunkPos.z + "] to monitor list");
         } else {
             Messenger.m(source, "r Couldn't add " + name + ". Name Already exists.");
         }
