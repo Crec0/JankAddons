@@ -10,8 +10,9 @@
     "raidMonitor.RaidMixin",
     "randomTickFungus.AbstractBlockMixin",
     "randomTickFungus.FungusBlockMixin",
-    "stackableBows.AnvilScreenHandlerMixin",
-    "stackableBows.ItemStackMixin"
+    "stackableBows.ForgingScreenHandlerMixin",
+    "stackableBows.ItemStackMixin",
+    "stackableBows.ScreenHandlerMixin"
   ],
   "client": [
   ],
