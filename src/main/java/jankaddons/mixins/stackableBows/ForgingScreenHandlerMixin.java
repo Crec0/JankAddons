@@ -5,17 +5,12 @@ import jankaddons.util.Utils;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ForgingScreenHandler;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
-import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 
-@Debug(export = true)
 @Mixin(ForgingScreenHandler.class)
 public class ForgingScreenHandlerMixin {
     @Redirect(method = "<init>", at = @At(value = "NEW", target = "net/minecraft/screen/slot/Slot", ordinal = 0))
