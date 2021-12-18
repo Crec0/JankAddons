@@ -21,13 +21,6 @@ public class JankAddonsSettings {
     public static boolean harvestableTallGrassFern = false;
 
     @Rule(
-            desc = "Make deepslate instaminable",
-            category = {JANK, SURVIVAL, FEATURE},
-            options = {"true", "false"}
-    )
-    public static boolean instamineDeepslate = false;
-
-    @Rule(
             desc = "Make enderchests movable",
             category = {JANK, SURVIVAL, EXPERIMENTAL},
             options = {"true", "false"}
