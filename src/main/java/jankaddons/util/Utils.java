@@ -16,7 +16,7 @@ public class Utils {
     private static final Language LANGUAGE_INSTANCE = Language.getInstance();
 
     public static boolean isFreshBow(ItemStack stack) {
-        return stack.isItemEqualIgnoreDamage(Items.BOW.getDefaultStack()) && stack.getDamage() == 0 && !stack.hasEnchantments();
+        return stack.getItem() == Items.BOW && stack.getDamage() == 0 && !stack.hasEnchantments();
     }
 
     public static Path getSaveFile() {

@@ -1,18 +1,18 @@
 {
   "required": true,
   "package": "jankaddons.mixins",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_8",
   "mixins": [
     "harvestableTallPlant.TallPlantBlockMixin",
-    "miningSpeeds.MiningToolItemMixin",
-    "miningSpeeds.PickaxeItemMixin",
     "movableBlocks.PistonBlockMixin",
     "portalActivity.EntityMixin",
     "portalActivity.MinecraftServerMixin",
+    "raidMonitor.RaidMixin",
     "randomTickFungus.AbstractBlockMixin",
     "randomTickFungus.FungusBlockMixin",
-    "stackableBows.AnvilScreenHandlerMixin",
-    "stackableBows.ItemStackMixin"
+    "stackableBows.ForgingScreenHandlerMixin",
+    "stackableBows.ItemStackMixin",
+    "stackableBows.ScreenHandlerMixin"
   ],
   "client": [
   ],
