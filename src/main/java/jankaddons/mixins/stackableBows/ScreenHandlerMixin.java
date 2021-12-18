@@ -2,6 +2,7 @@ package jankaddons.mixins.stackableBows;
 
 import jankaddons.JankAddonsSettings;
 import jankaddons.util.Utils;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
@@ -19,11 +20,13 @@ public class ScreenHandlerMixin {
     @Unique
     private ItemStack stackToTransfer = ItemStack.EMPTY;
 
-    @Inject(method = "canStacksCombine", at = @At("RETURN"), cancellable = true)
-    private static void falsifyCanCombineForBows(ItemStack first, ItemStack second, CallbackInfoReturnable<Boolean> cir) {
-        if ((inputSlotId == 0 || inputSlotId == 1) && cir.getReturnValue() && JankAddonsSettings.stackableFreshBows && Utils.isFreshBow(first)) {
-            cir.setReturnValue(false);
+    @Redirect(method = "insertItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;canCombine(Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z"))
+    public boolean falsifyCanCombineForBows(ItemStack stack, ItemStack otherStack) {
+        boolean canCombine = ItemStack.canCombine(stack, otherStack);
+        if ((inputSlotId == 0 || inputSlotId == 1) && canCombine && JankAddonsSettings.stackableFreshBows && Utils.isFreshBow(stack) && Utils.isFreshBow(otherStack)) {
+            return false;
         }
+        return canCombine;
     }
 
     @Inject(method = "insertItem", at = @At("HEAD"))
