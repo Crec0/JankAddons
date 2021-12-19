@@ -2,10 +2,13 @@ package jankaddons;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import carpet.script.CarpetContext;
+import carpet.script.annotation.AnnotationParser;
 import com.mojang.brigadier.CommandDispatcher;
 import jankaddons.commands.PortalMonitorCommand;
 import jankaddons.helpers.PortalMonitorData;
 import jankaddons.helpers.PortalMonitorUtil;
+import jankaddons.script.Scarpet;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -26,6 +29,7 @@ public class JankAddons implements CarpetExtension, ModInitializer {
     @Override
     public void onGameStarted() {
         CarpetServer.settingsManager.parseSettingsClass(JankAddonsSettings.class);
+        AnnotationParser.parseFunctionClass(Scarpet.class);
     }
 
     @Override

@@ -10,6 +10,7 @@
     "raidMonitor.RaidMixin",
     "randomTickFungus.AbstractBlockMixin",
     "randomTickFungus.FungusBlockMixin",
+    "scarpet.NoiseChunkGeneratorMixin",
     "stackableBows.ForgingScreenHandlerMixin",
     "stackableBows.ItemStackMixin",
     "stackableBows.ScreenHandlerMixin"

@@ -15,6 +15,10 @@ Feel free to contribute or suggest features which you thing should be present in
 * [stackableFreshBows](#stackableFreshBows)
 * [commandPortalMonitor](#commandPortalMonitor)
 
+## Scarpet
+
+* [set_world_noise_seed(seed)](#set_world_noise_seed)
+
 # Features
 
 ## fungusRandomTickGrow
@@ -52,6 +56,14 @@ For usage of command, please refer [portalmonitor](#portalmonitor)
 * Default Value: `false`
 * Required Options: `false`, `true`, `ops`
 * Category: `JANK`, `SURVIVAL`, `COMMAND`
+
+# Scarpet
+
+## `set_world_noise_seed(seed)`
+
+**THIS WILL CORRUPT YOUR WORLD. DO NOT USE THIS IF YOU DO NOT KNOW WHAT YOU ARE DOING.**
+
+Set the world noise seed. Goes along with `sample_noise` function from base carpet to search for seeds based on noise values.
 
 # Commands
 ## portalmonitor
