@@ -40,7 +40,7 @@ Makes ender chests movable
 * Category: `JANK`, `SURVIVAL`, `EXPERIMENTAL`
 
 ## movableEndPortalFrame
-Makes end portal frames movable on PUSH ONLY. Similar to how Glazed Terracotta works.
+Makes end portal frames movable by PUSH ONLY. Eye less portals only. Similar to how Glazed Terracotta works.
 * Type: `Boolean`
 * Default Value: `false`
 * Required Options: `false`, `true`
