@@ -28,6 +28,13 @@ public class JankAddonsSettings {
     public static boolean movableEnderChest = false;
 
     @Rule(
+            desc = "Make end portal frames movable",
+            category = {JANK, SURVIVAL, EXPERIMENTAL},
+            options = {"true", "false"}
+    )
+    public static boolean movableEndPortalFrame = false;
+
+    @Rule(
             desc = "Make fresh bows stack to 64",
             category = {JANK, SURVIVAL, FEATURE},
             options = {"true", "false"}
