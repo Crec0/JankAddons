@@ -21,11 +21,25 @@ public class JankAddonsSettings {
     public static boolean harvestableTallGrassFern = false;
 
     @Rule(
+            desc = "Make deepslate instaminable",
+            category = {JANK, SURVIVAL, FEATURE},
+            options = {"true", "false"}
+    )
+    public static boolean instamineDeepslate = false;
+
+    @Rule(
             desc = "Make enderchests movable",
             category = {JANK, SURVIVAL, EXPERIMENTAL},
             options = {"true", "false"}
     )
     public static boolean movableEnderChest = false;
+
+    @Rule(
+            desc = "Make end portal frames movable",
+            category = {JANK, SURVIVAL, EXPERIMENTAL},
+            options = {"true", "false"}
+    )
+    public static boolean movableEndPortalFrame = false;
 
     @Rule(
             desc = "Make fresh bows stack to 64",

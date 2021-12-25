@@ -11,7 +11,9 @@ Feel free to contribute or suggest features which you thing should be present in
 
 * [fungusRandomTickGrow](#fungusRandomTickGrow)
 * [harvestableTallGrassFern](#harvestableTallGrassFern)
+* [instamineDeepslate](#instamineDeepslate)
 * [movableEnderChest](#movableEnderChest)
+* [movableEndPortalFrame](#movableEndPortalFrame)
 * [stackableFreshBows](#stackableFreshBows)
 * [commandPortalMonitor](#commandPortalMonitor)
 
@@ -35,8 +37,22 @@ Makes tall grass and large fern harvestable with shears
 * Required Options: `false`, `true`
 * Category: `JANK`, `SURVIVAL`, `FEATURE`
 
+## instamineDeepslate
+Makes deepslate instamine
+* Type: `Boolean`
+* Default Value: `false`
+* Required Options: `false`, `true`
+* Category: `JANK`, `SURVIVAL`, `FEATURE`
+
 ## movableEnderChest
 Makes ender chests movable
+* Type: `Boolean`
+* Default Value: `false`
+* Required Options: `false`, `true`
+* Category: `JANK`, `SURVIVAL`, `EXPERIMENTAL`
+
+## movableEndPortalFrame
+Makes end portal frames movable by PUSH ONLY. Eye less portals only. Similar to how Glazed Terracotta works.
 * Type: `Boolean`
 * Default Value: `false`
 * Required Options: `false`, `true`
