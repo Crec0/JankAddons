@@ -72,3 +72,14 @@ Or checking if your chunk loaders are correctly working
 
 ### Notes
 * If a portal is not named, it will generate a name for it `<EntityType><AtomicNumber>`
+
+## YourKit
+![](https://www.yourkit.com/images/yklogo.png)
+
+We appreciate YourKit for providing the project developers licenses of its profiler to help us improve performance! 
+
+YourKit supports open source projects with innovative and intelligent tools
+for monitoring and profiling Java and .NET applications.
+YourKit is the creator of [YourKit Java Profiler](https://www.yourkit.com/java/profiler/),
+[YourKit .NET Profiler](https://www.yourkit.com/.net/profiler/) and
+[YourKit YouMonitor](https://www.yourkit.com/youmonitor), tools for profiling Java and .NET applications.
