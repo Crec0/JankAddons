@@ -4,10 +4,6 @@ import com.google.gson.*;
 import jankaddons.JankAddons;
 import jankaddons.JankAddonsSettings;
 import jankaddons.util.Utils;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.util.registry.Registry;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,6 +13,9 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
+import net.minecraft.core.Registry;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 
 import static jankaddons.JankAddons.PORTAL_DATA;
 
@@ -138,7 +137,7 @@ public class PortalMonitorUtil {
             }
             root.add("portals", portalArray);
             JsonArray entities = new JsonArray();
-            src.getEntityTypes().values().forEach(e -> entities.add(Registry.ENTITY_TYPE.getId(e).toString()));
+            src.getEntityTypes().values().forEach(e -> entities.add(Registry.ENTITY_TYPE.getKey(e).toString()));
             root.add("tracked_entities", entities);
             return root;
         }
@@ -159,7 +158,7 @@ public class PortalMonitorUtil {
                 data.addPortal(name, new ExpirableNamedPosition(name, x, z));
             });
             JsonArray entities = root.getAsJsonArray("tracked_entities");
-            entities.forEach(entityObj -> EntityType.get(entityObj.getAsString()).ifPresent(data::addEntity));
+            entities.forEach(entityObj -> EntityType.byString(entityObj.getAsString()).ifPresent(data::addEntity));
             return data;
         }
     }

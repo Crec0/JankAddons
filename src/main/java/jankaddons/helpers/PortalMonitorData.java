@@ -2,11 +2,10 @@ package jankaddons.helpers;
 
 import jankaddons.helpers.ExpirableNamedPosition;
 import jankaddons.util.Utils;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-
 import java.util.HashMap;
 import java.util.Map;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 
 public class PortalMonitorData {
     private final Map<String, ExpirableNamedPosition> namedPositions;

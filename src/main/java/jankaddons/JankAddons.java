@@ -10,8 +10,8 @@ import jankaddons.helpers.PortalMonitorData;
 import jankaddons.helpers.PortalMonitorUtil;
 import jankaddons.script.Scarpet;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.command.ServerCommandSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,7 +33,7 @@ public class JankAddons implements CarpetExtension, ModInitializer {
     }
 
     @Override
-    public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
         PortalMonitorCommand.register(dispatcher);
     }
 

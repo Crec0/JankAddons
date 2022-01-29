@@ -1,40 +1,39 @@
 package jankaddons.mixins.scarpet;
 
 import jankaddons.ducks.INoiseChunkGenerator;
-import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.NoiseColumnSampler;
-import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
-import net.minecraft.world.gen.chunk.GenerationShapeConfig;
-import net.minecraft.world.gen.chunk.NoiseChunkGenerator;
-import net.minecraft.world.gen.random.ChunkRandom;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.function.Supplier;
+import net.minecraft.core.Registry;
+import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
+import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
+import net.minecraft.world.level.levelgen.NoiseSampler;
+import net.minecraft.world.level.levelgen.NoiseSettings;
+import net.minecraft.world.level.levelgen.WorldgenRandom;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
-@Mixin(NoiseChunkGenerator.class)
+@Mixin(NoiseBasedChunkGenerator.class)
 public class NoiseChunkGeneratorMixin implements INoiseChunkGenerator {
-    @Shadow
-    @Final
-    protected Supplier<ChunkGeneratorSettings> settings;
-    @Shadow
-    @Final
-    private Registry<DoublePerlinNoiseSampler.NoiseParameters> noiseRegistry;
+    @Shadow @Final protected Supplier<NoiseGeneratorSettings> settings;
 
     @Mutable
     @Shadow
     @Final
-    private NoiseColumnSampler noiseColumnSampler;
+    private NoiseSampler sampler;
+
+    @Shadow
+    @Final
+    private Registry<NormalNoise.NoiseParameters> noises;
 
     @Override
     public void setNoiseChunkGenerator(long seed) {
-        ChunkGeneratorSettings generatorSettings = this.settings.get();
-        boolean hasNoiseCaves = generatorSettings.hasNoiseCaves();
-        GenerationShapeConfig shapeConfig = generatorSettings.getGenerationShapeConfig();
-        ChunkRandom.RandomProvider randomProvider = generatorSettings.getRandomProvider();
-        this.noiseColumnSampler = new NoiseColumnSampler(shapeConfig, hasNoiseCaves, seed, noiseRegistry, randomProvider);
+        NoiseGeneratorSettings generatorSettings = this.settings.get();
+        boolean hasNoiseCaves = generatorSettings.isNoiseCavesEnabled();
+        NoiseSettings shapeConfig = generatorSettings.noiseSettings();
+        WorldgenRandom.Algorithm randomProvider = generatorSettings.getRandomSource();
+        this.sampler = new NoiseSampler(shapeConfig, hasNoiseCaves, seed, noises, randomProvider);
     }
 }

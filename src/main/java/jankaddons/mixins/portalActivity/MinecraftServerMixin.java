@@ -11,7 +11,7 @@ import java.util.function.BooleanSupplier;
 
 @Mixin(MinecraftServer.class)
 public class MinecraftServerMixin {
-    @Inject(method = "tick", at = @At("RETURN"))
+    @Inject(method = "tickServer", at = @At("RETURN"))
     public void onTick(BooleanSupplier shouldKeepTicking, CallbackInfo ci) {
         PortalMonitorUtil.tick();
     }

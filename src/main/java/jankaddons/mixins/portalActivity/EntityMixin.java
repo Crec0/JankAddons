@@ -2,14 +2,14 @@ package jankaddons.mixins.portalActivity;
 
 import jankaddons.JankAddonsSettings;
 import jankaddons.helpers.PortalMonitorUtil;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.world.BlockLocating;
-import net.minecraft.world.TeleportTarget;
-import net.minecraft.world.World;
+import net.minecraft.BlockUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.portal.PortalInfo;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,10 +24,10 @@ public abstract class EntityMixin {
     @Final
     private EntityType<?> type;
 
-    @Inject(method = "method_30331", at = @At("RETURN"), remap = false)
-    public void captureEntityCrossingPortal(ServerWorld destination, BlockLocating.Rectangle rectangle, CallbackInfoReturnable<TeleportTarget> cir) {
-        if (!JankAddonsSettings.commandPortalMonitor.equals("false") && destination.getRegistryKey() == World.OVERWORLD && PortalMonitorUtil.isTrackedEntity(type)) {
-            ChunkPos entryChunkPos = new ChunkPos(new BlockPos(cir.getReturnValue().position));
+    @Inject(method = "lambda$findDimensionEntryPoint$6(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/BlockUtil$FoundRectangle;)Lnet/minecraft/world/level/portal/PortalInfo;", at = @At("RETURN"), remap = false)
+    public void captureEntityCrossingPortal(ServerLevel destination, BlockUtil.FoundRectangle rectangle, CallbackInfoReturnable<PortalInfo> cir) {
+        if (!JankAddonsSettings.commandPortalMonitor.equals("false") && destination.dimension() == Level.OVERWORLD && PortalMonitorUtil.isTrackedEntity(type)) {
+            ChunkPos entryChunkPos = new ChunkPos(new BlockPos(cir.getReturnValue().pos));
             PortalMonitorUtil.resetOrInitialize(type, entryChunkPos.x, entryChunkPos.z);
         }
     }

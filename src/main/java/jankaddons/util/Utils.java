@@ -2,12 +2,11 @@ package jankaddons.util;
 
 import jankaddons.constants.StringConstants;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.Language;
-
+import net.minecraft.locale.Language;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,7 +15,7 @@ public class Utils {
     private static final Language LANGUAGE_INSTANCE = Language.getInstance();
 
     public static boolean isFreshBow(ItemStack stack) {
-        return stack.getItem() == Items.BOW && stack.getDamage() == 0 && !stack.hasEnchantments();
+        return stack.getItem() == Items.BOW && stack.getDamageValue() == 0 && !stack.isEnchanted();
     }
 
     public static Path getSaveFile() {
@@ -42,6 +41,6 @@ public class Utils {
     }
 
     public static String getNiceName(EntityType<? extends Entity> entityType) {
-        return LANGUAGE_INSTANCE.get(entityType.getTranslationKey());
+        return LANGUAGE_INSTANCE.getOrDefault(entityType.getDescriptionId());
     }
 }
