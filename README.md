@@ -19,7 +19,7 @@ Feel free to contribute or suggest features which you thing should be present in
 
 ## Scarpet
 
-* [set_world_noise_seed(seed)](#set_world_noise_seed)
+* ~~[set_world_noise_seed(seed)](#set_world_noise_seed)~~
 
 # Features
 
@@ -77,9 +77,10 @@ For usage of command, please refer [portalmonitor](#portalmonitor)
 
 ## `set_world_noise_seed(seed)`
 
-**THIS WILL CORRUPT YOUR WORLD. DO NOT USE THIS IF YOU DO NOT KNOW WHAT YOU ARE DOING.**
+Removed because of recent noise rework. This is painful to implement now.
+~~**THIS WILL CORRUPT YOUR WORLD. DO NOT USE THIS IF YOU DO NOT KNOW WHAT YOU ARE DOING.**~~
 
-Set the world noise seed. Goes along with `sample_noise` function from base carpet to search for seeds based on noise values.
+~~Set the world noise seed. Goes along with `sample_noise` function from base carpet to search for seeds based on noise values.~~
 
 # Commands
 ## portalmonitor
