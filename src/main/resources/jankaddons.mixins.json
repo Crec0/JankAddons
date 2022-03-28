@@ -12,7 +12,6 @@
     "raidMonitor.RaidMixin",
     "randomTickFungus.BlockBehaviourMixin",
     "randomTickFungus.FungusBlockMixin",
-    "scarpet.NoiseChunkGeneratorMixin",
     "stackableBows.ItemCombinerMenuMixin",
     "stackableBows.ItemStackMixin",
     "stackableBows.AbstractContainerMenuMixin"
