@@ -3,7 +3,7 @@ package jankaddons;
 import carpet.settings.Rule;
 
 import static carpet.settings.RuleCategory.*;
-import static jankaddons.constants.StringConstants.JANK;
+import static jankaddons.constants.SharedConstants.JANK;
 
 public class JankAddonsSettings {
     @Rule(

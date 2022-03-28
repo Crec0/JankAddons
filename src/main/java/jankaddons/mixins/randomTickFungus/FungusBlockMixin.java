@@ -1,7 +1,7 @@
 package jankaddons.mixins.randomTickFungus;
 
 import jankaddons.JankAddonsSettings;
-import jankaddons.constants.NumericConstants;
+import jankaddons.constants.SharedConstants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,7 +19,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 
 @Mixin(FungusBlock.class)
-public abstract class FungusBlockMixin extends AbstractBlockMixin {
+public abstract class FungusBlockMixin extends BlockBehaviourMixin {
 
 
     @Shadow
@@ -32,7 +32,7 @@ public abstract class FungusBlockMixin extends AbstractBlockMixin {
 
     @Override
     public void handleRandomTick(BlockState state, ServerLevel world, BlockPos pos, Random random, CallbackInfo ci) {
-        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(NumericConstants.FUNGUS_GROWTH_CHANCE) == 0 && world.getMaxLocalRawBrightness(pos.above()) >= 8) {
+        if (JankAddonsSettings.fungusRandomTickGrow && random.nextInt(SharedConstants.FUNGUS_GROWTH_CHANCE) == 0 && world.getMaxLocalRawBrightness(pos.above()) >= 8) {
             this.performBonemeal(world, random, pos, state);
         }
     }

@@ -1,6 +1,6 @@
 package jankaddons.util;
 
-import jankaddons.constants.StringConstants;
+import jankaddons.constants.SharedConstants;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.locale.Language;
 import net.minecraft.world.entity.Entity;
@@ -23,7 +23,7 @@ public class Utils {
             Path saveFile = FabricLoader.getInstance()
                                         .getConfigDir()
                                         .resolve("JankAddons")
-                                        .resolve(StringConstants.NAMED_PORTAL_SAVE_FILE);
+                                        .resolve(SharedConstants.NAMED_PORTAL_SAVE_FILE);
 
             if (!Files.exists(saveFile.getParent())) {
                 Files.createDirectory(saveFile.getParent());

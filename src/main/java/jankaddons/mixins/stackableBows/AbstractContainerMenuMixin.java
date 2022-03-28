@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractContainerMenu.class)
-public class ScreenHandlerMixin {
+public class AbstractContainerMenuMixin {
     @Unique
     private static int inputSlotId = -1;
     @Unique

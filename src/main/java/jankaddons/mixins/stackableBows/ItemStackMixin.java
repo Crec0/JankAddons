@@ -1,7 +1,7 @@
 package jankaddons.mixins.stackableBows;
 
 import jankaddons.JankAddonsSettings;
-import jankaddons.constants.NumericConstants;
+import jankaddons.constants.SharedConstants;
 import jankaddons.util.Utils;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,7 +15,7 @@ public abstract class ItemStackMixin {
     @Inject(method = "getMaxStackSize", at = @At("HEAD"), cancellable = true)
     public void getMaxCount(CallbackInfoReturnable<Integer> cir) {
         if (JankAddonsSettings.stackableFreshBows && Utils.isFreshBow((ItemStack) (Object) this)) {
-            cir.setReturnValue(NumericConstants.MAX_BOW_STACK_SIZE);
+            cir.setReturnValue(SharedConstants.MAX_BOW_STACK_SIZE);
         }
     }
 }

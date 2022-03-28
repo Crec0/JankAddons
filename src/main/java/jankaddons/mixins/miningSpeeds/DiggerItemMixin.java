@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(DiggerItem.class)
-public abstract class MiningToolItemMixin {
+public abstract class DiggerItemMixin {
     @Inject(method = "getDestroySpeed", at = @At("HEAD"), cancellable = true)
     public void miningSpeedHandler(ItemStack stack, BlockState state, CallbackInfoReturnable<Float> cir){}
 }

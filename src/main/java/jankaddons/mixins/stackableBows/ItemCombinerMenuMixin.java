@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 
 @Mixin(ItemCombinerMenu.class)
-public class ForgingScreenHandlerMixin {
+public class ItemCombinerMenuMixin {
     @Redirect(method = "<init>", at = @At(value = "NEW", target = "net/minecraft/world/inventory/Slot", ordinal = 0))
     public Slot onSlotInit0(Container inventory, int index, int x, int y) {
         return new Slot(inventory, index, x, y) {

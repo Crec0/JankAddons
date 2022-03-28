@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 @Mixin(BlockBehaviour.class)
-public abstract class AbstractBlockMixin {
+public abstract class BlockBehaviourMixin {
     @Shadow
     @Mutable
     @Final

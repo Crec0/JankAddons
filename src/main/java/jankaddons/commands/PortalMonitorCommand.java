@@ -21,7 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 
-import static jankaddons.constants.StringConstants.GRAY_DASHED_LINE;
+import static jankaddons.constants.SharedConstants.GRAY_DASHED_LINE;
 import static net.minecraft.commands.SharedSuggestionProvider.suggest;
 import static net.minecraft.commands.Commands.argument;
 import static net.minecraft.commands.Commands.literal;
@@ -29,27 +29,27 @@ import static net.minecraft.commands.Commands.literal;
 public class PortalMonitorCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
-                literal("portalmonitor")
-                        .requires((player) -> SettingsManager.canUseCommand(player, JankAddonsSettings.commandPortalMonitor))
-                        .then(literal("addLoader")
-                                .then(argument("name",StringArgumentType.word())
-                                        .executes(PortalMonitorCommand::addChunk)))
-                        .then(literal("removeLoader")
-                                .then(argument("name", StringArgumentType.word())
-                                        .suggests((c, b) -> suggest(PortalMonitorUtil.getCustomNamedPosStream(),b))
-                                        .executes(PortalMonitorCommand::removeChunk)))
-                        .then(literal("listLoaders")
-                                .executes(PortalMonitorCommand::listChunks))
-                        .then(literal("addEntity")
-                                .then(argument("entity", EntitySummonArgument.id())
-                                        .suggests(SuggestionProviders.SUMMONABLE_ENTITIES)
-                                        .executes(PortalMonitorCommand::addEntity)))
-                        .then(literal("removeEntity")
-                                .then(argument("entityName", StringArgumentType.string())
-                                .suggests((c, b) -> suggest(PortalMonitorUtil.getTrackedEntities(),b))
-                                .executes(PortalMonitorCommand::removeEntity)))
-                        .then(literal("listEntities")
-                                .executes(PortalMonitorCommand::listEntities)));
+            literal("portalmonitor")
+                .requires((player) -> SettingsManager.canUseCommand(player, JankAddonsSettings.commandPortalMonitor))
+                .then(literal("addLoader")
+                    .then(argument("name",StringArgumentType.word())
+                        .executes(PortalMonitorCommand::addChunk)))
+                .then(literal("removeLoader")
+                    .then(argument("name", StringArgumentType.word())
+                        .suggests((c, b) -> suggest(PortalMonitorUtil.getCustomNamedPosStream(),b))
+                        .executes(PortalMonitorCommand::removeChunk)))
+                .then(literal("listLoaders")
+                    .executes(PortalMonitorCommand::listChunks))
+                .then(literal("addEntity")
+                    .then(argument("entity", EntitySummonArgument.id())
+                        .suggests(SuggestionProviders.SUMMONABLE_ENTITIES)
+                        .executes(PortalMonitorCommand::addEntity)))
+                .then(literal("removeEntity")
+                    .then(argument("entityName", StringArgumentType.string())
+                        .suggests((c, b) -> suggest(PortalMonitorUtil.getTrackedEntities(),b))
+                        .executes(PortalMonitorCommand::removeEntity)))
+                .then(literal("listEntities")
+                    .executes(PortalMonitorCommand::listEntities)));
     }
 
     private static int addChunk(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {

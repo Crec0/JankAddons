@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(DoublePlantBlock.class)
-public class TallPlantBlockMixin {
+public class DoublePlantBlockMixin {
     @Redirect(method = "playerWillDestroy", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/DoublePlantBlock;dropResources(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;)V"))
     public void onDropStack(BlockState state, Level world, BlockPos blockPos, BlockEntity blockEntity, Entity entity, ItemStack stack) {
         if (JankAddonsSettings.harvestableTallGrassFern && isHoldingShears(stack) && isValidBlock(state)) {

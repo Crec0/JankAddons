@@ -3,7 +3,7 @@ package jankaddons.helpers;
 import java.util.ArrayList;
 import java.util.List;
 
-import static jankaddons.constants.NumericConstants.PORTAL_ACTIVITY_EXPIRY;
+import static jankaddons.constants.SharedConstants.PORTAL_ACTIVITY_EXPIRY;
 
 public class ExpirableNamedPosition {
 

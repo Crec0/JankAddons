@@ -3,19 +3,19 @@
   "package": "jankaddons.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "harvestableTallPlant.TallPlantBlockMixin",
-    "miningSpeeds.MiningToolItemMixin",
+    "harvestableTallPlant.DoublePlantBlockMixin",
+    "miningSpeeds.DiggerItemMixin",
     "miningSpeeds.PickaxeItemMixin",
-    "movableBlocks.PistonBlockMixin",
+    "movableBlocks.PistonBaseBlockMixin",
     "portalActivity.EntityMixin",
     "portalActivity.MinecraftServerMixin",
     "raidMonitor.RaidMixin",
-    "randomTickFungus.AbstractBlockMixin",
+    "randomTickFungus.BlockBehaviourMixin",
     "randomTickFungus.FungusBlockMixin",
     "scarpet.NoiseChunkGeneratorMixin",
-    "stackableBows.ForgingScreenHandlerMixin",
+    "stackableBows.ItemCombinerMenuMixin",
     "stackableBows.ItemStackMixin",
-    "stackableBows.ScreenHandlerMixin"
+    "stackableBows.AbstractContainerMenuMixin"
   ],
   "client": [
   ],
