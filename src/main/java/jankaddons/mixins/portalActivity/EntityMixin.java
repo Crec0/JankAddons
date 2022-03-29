@@ -24,7 +24,10 @@ public abstract class EntityMixin {
     @Final
     private EntityType<?> type;
 
-    @Inject(method = "lambda$findDimensionEntryPoint$6(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/BlockUtil$FoundRectangle;)Lnet/minecraft/world/level/portal/PortalInfo;", at = @At("RETURN"), remap = false)
+    @Inject(
+        method = "lambda$findDimensionEntryPoint$6(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/BlockUtil$FoundRectangle;)Lnet/minecraft/world/level/portal/PortalInfo;",
+        at = @At("RETURN")
+    )
     public void captureEntityCrossingPortal(ServerLevel destination, BlockUtil.FoundRectangle rectangle, CallbackInfoReturnable<PortalInfo> cir) {
         if (!JankAddonsSettings.commandPortalMonitor.equals("false") && destination.dimension() == Level.OVERWORLD && PortalMonitorUtil.isTrackedEntity(type)) {
             ChunkPos entryChunkPos = new ChunkPos(new BlockPos(cir.getReturnValue().pos));
